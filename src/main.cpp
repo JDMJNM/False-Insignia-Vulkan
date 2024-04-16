@@ -1053,7 +1053,7 @@ std::vector<const char*> FIApplication::getRequiredExtensions() {
     glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
 
     std::vector<const char*> extensions(glfwExtensions,
-									    glfwExtensions + glfwExtensionCount);
+					glfwExtensions + glfwExtensionCount);
     if (enableValidationLayers) {
 	extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
     }
@@ -1096,7 +1096,8 @@ VKAPI_ATTR VkBool32 VKAPI_CALL FIApplication::debugCallback(
     return VK_FALSE;
 }
 
-void FIApplication::framebufferResizeCallback(GLFWwindow* window, int width, int height) {
+void FIApplication::framebufferResizeCallback(GLFWwindow* window,
+					      int width, int height) {
     auto app = reinterpret_cast<FIApplication*>(glfwGetWindowUserPointer(window));
     app->framebufferResized = true;
 }
@@ -1113,3 +1114,4 @@ int main(int argc, char** argv)
     }
 
     return EXIT_SUCCESS;
+}

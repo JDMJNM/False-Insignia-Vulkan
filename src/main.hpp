@@ -126,7 +126,8 @@ struct Vertex {
     glm::uvec4 data;
 
     static VkVertexInputBindingDescription getBindingDescription();
-    static std::array<VkVertexInputAttributeDescription, 2> getAttributeDescriptions();
+    static std::array<VkVertexInputAttributeDescription, 2> \
+	getAttributeDescriptions();
 };
 #pragma endregion
 
@@ -224,7 +225,7 @@ private:
 	const std::vector<VkSurfaceFormatKHR>&
     );
     VkPresentModeKHR chooseSwapPresentMode(
-	const std::vector<VkPresentModeKHR>&
+	    const std::vector<VkPresentModeKHR>&
     );
     VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR&);
     int rateDeviceSuitability(VkPhysicalDevice);
@@ -235,9 +236,9 @@ private:
     std::vector<const char*> getRequiredExtensions();
     bool checkValidationLayerSupport();
     static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
-	VkDebugUtilsMessageSeverityFlagBitsEXT,
-	VkDebugUtilsMessageTypeFlagsEXT,
-	const VkDebugUtilsMessengerCallbackDataEXT*, void*
+	    VkDebugUtilsMessageSeverityFlagBitsEXT,
+	    VkDebugUtilsMessageTypeFlagsEXT,
+	    const VkDebugUtilsMessengerCallbackDataEXT*, void*
     );
     static void framebufferResizeCallback(GLFWwindow*, int, int);
 };
